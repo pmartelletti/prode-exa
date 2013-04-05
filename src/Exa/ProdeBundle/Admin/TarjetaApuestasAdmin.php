@@ -53,10 +53,10 @@ class TarjetaApuestasAdmin extends Admin {
 
     // check user permissions
     if($this->hasRoute('edit') && $this->isGranted('EDIT') && $this->hasRoute('delete') && $this->isGranted('DELETE')){
-        $actions['calcular']=[
+        $actions['calcular']= array(
             'label'            => "Calcular Resultados",
             'ask_confirmation' => true // If true, a confirmation will be asked before performing the action
-        ];
+        );
 
     }
 
