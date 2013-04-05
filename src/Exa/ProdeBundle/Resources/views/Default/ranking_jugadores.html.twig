@@ -1,0 +1,43 @@
+{# empty Twig template #}
+{% extends 'ExaProdeBundle:Default:authenticated.html.twig' %}
+{% block pagecontent %}
+<h3>Posiciones en {{ tipo }}</h3>
+  <ul class="nav nav-tabs">
+    {% for key,posiciones_liga in posiciones %}
+        {% if posiciones_liga is not null %}
+        <li><a href="#tab{{key}}" data-toggle="tab">{{ posiciones_liga[0].fecha.liga.getshortname }}</a></li>
+        {% endif %}
+    {% endfor %}
+  </ul>
+  <div class="tab-content">
+    {% for key,posiciones_liga in posiciones %}
+        {% if posiciones_liga is not null %}
+        <div class="tab-pane fade" id="tab{{key}}">
+            {% if tipo == "fecha" %}
+                <p class="prode-tarjeta-right">{{ posiciones_liga[0].fecha.name }}</p>
+            {% endif %}
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th class="prode-tarjeta-centered">Usuario</th>
+                        <th class="prode-tarjeta-centered">Equipo</th>
+                        <th class="prode-tarjeta-centered">Aciertos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for k,posicion in posiciones_liga %}
+                    <tr>
+                        <td>{{k + 1}}</td>
+                        <td>{{posicion.usuario.name}} ({{ posicion.usuario }})</td>
+                        <td>{{ posicion.usuario.equipo.name}}</td>
+                        <td>{{posicion.aciertos}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}

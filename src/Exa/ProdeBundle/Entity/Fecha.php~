@@ -1,0 +1,234 @@
+<?php
+
+namespace Exa\ProdeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Fecha
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Exa\ProdeBundle\Entity\FechaRepository")
+ */
+class Fecha
+{
+    
+    public function __toString() {
+        return sprintf("%s (%s)", $this->name, $this->liga);
+    }
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var integer
+     *
+     * @ORM\ManyToOne(targetEntity="Liga", inversedBy="fechas")
+     * @ORM\JoinColumn(name="liga_id", referencedColumnName="id")
+     */
+    private $liga;
+    
+    /**
+     *@ORM\OneToMany(targetEntity="Apuesta", mappedBy="partidos", cascade={"all"})
+     */
+    private $partidos;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="TarjetaApuestas", mappedBy="fecha", cascade={"all"})
+     */
+    private $tarjetasApuesta;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="veda", type="date")
+     */
+    private $veda;
+    
+    public function __construct() {
+        $this->partidos = new ArrayCollection();
+        $this->tarjetasApuesta = new ArrayCollection();
+    }
+
+        /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Fecha
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set liga_id
+     *
+     * @param integer $ligaId
+     * @return Fecha
+     */
+    public function setLigaId($ligaId)
+    {
+        $this->liga_id = $ligaId;
+    
+        return $this;
+    }
+
+    /**
+     * Get liga_id
+     *
+     * @return integer 
+     */
+    public function getLigaId()
+    {
+        return $this->liga_id;
+    }
+
+    /**
+     * Set veda
+     *
+     * @param \DateTime $veda
+     * @return Fecha
+     */
+    public function setVeda($veda)
+    {
+        $this->veda = $veda;
+    
+        return $this;
+    }
+
+    /**
+     * Get veda
+     *
+     * @return \DateTime 
+     */
+    public function getVeda()
+    {
+        return $this->veda;
+    }
+
+    /**
+     * Set liga
+     *
+     * @param \Exa\ProdeBundle\Entity\Liga $liga
+     * @return Fecha
+     */
+    public function setLiga(\Exa\ProdeBundle\Entity\Liga $liga = null)
+    {
+        $this->liga = $liga;
+    
+        return $this;
+    }
+
+    /**
+     * Get liga
+     *
+     * @return \Exa\ProdeBundle\Entity\Liga 
+     */
+    public function getLiga()
+    {
+        return $this->liga;
+    }
+
+    /**
+     * Add partidos
+     *
+     * @param \Exa\ProdeBundle\Entity\Partido $partidos
+     * @return Fecha
+     */
+    public function addPartido(\Exa\ProdeBundle\Entity\Partido $partidos)
+    {
+        $this->partidos[] = $partidos;
+    
+        return $this;
+    }
+
+    /**
+     * Remove partidos
+     *
+     * @param \Exa\ProdeBundle\Entity\Partido $partidos
+     */
+    public function removePartido(\Exa\ProdeBundle\Entity\Partido $partidos)
+    {
+        $this->partidos->removeElement($partidos);
+    }
+
+    /**
+     * Get partidos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPartidos()
+    {
+        return $this->partidos;
+    }
+
+    /**
+     * Add tarjetasApuesta
+     *
+     * @param \Exa\ProdeBundle\Entity\TarjetaApuestas $tarjetasApuesta
+     * @return Fecha
+     */
+    public function addTarjetasApuesta(\Exa\ProdeBundle\Entity\TarjetaApuestas $tarjetasApuesta)
+    {
+        $this->tarjetasApuesta[] = $tarjetasApuesta;
+    
+        return $this;
+    }
+
+    /**
+     * Remove tarjetasApuesta
+     *
+     * @param \Exa\ProdeBundle\Entity\TarjetaApuestas $tarjetasApuesta
+     */
+    public function removeTarjetasApuesta(\Exa\ProdeBundle\Entity\TarjetaApuestas $tarjetasApuesta)
+    {
+        $this->tarjetasApuesta->removeElement($tarjetasApuesta);
+    }
+
+    /**
+     * Get tarjetasApuesta
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTarjetasApuesta()
+    {
+        return $this->tarjetasApuesta;
+    }
+}

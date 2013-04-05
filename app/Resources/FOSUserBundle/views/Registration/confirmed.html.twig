@@ -1,0 +1,8 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}, 'FOSUserBundle') }}</p>
+    {% if app.session is not empty %}
+        <p><a href="{{ path('exa_prode_homepage') }}">{{ 'registration.back'|trans({}, 'FOSUserBundle') }}</a></p>
+    {% endif %}
+{% endblock fos_user_content %}

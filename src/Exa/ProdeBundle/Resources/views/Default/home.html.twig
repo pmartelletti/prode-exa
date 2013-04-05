@@ -1,0 +1,39 @@
+{# empty Twig template #}
+{% extends 'ExaProdeBundle:Default:authenticated.html.twig' %}
+{% form_theme form 'ExaProdeBundle:Form:fields_apuestas.html.twig' %}
+{% block pagecontent %}
+<h3>Tarjeta de apuestas actual</h3>
+{% if fecha is not null %}
+<h4>{{ fecha }}</h4>
+
+<p class="prode-veda">Veda: {{ fecha.veda|date('d-m-Y') }} a las 0:00 hs.</p>
+
+<form action="{{path("exa_prode_homepage") }}" method="POST" {{ form_enctype(form) }}>
+    {# render the task's only field: description #}
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="prode-tarjeta-header" colspan="5">APUESTAS</th>
+            </tr>
+            <tr>
+                <th colspan="2">Equipo Local</th>
+                <th class="prode-tarjeta-centered">Empate</th>
+                <th class="prode-tarjeta-right" colspan="2">Equipo Visitante</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for apuesta in form.apuestas %}
+                {{ form_widget(apuesta) }}
+            {% endfor %}
+        </tbody>
+    </table>
+        {{ form_rest(form) }}
+        <div class="form-actions">
+            <input type="submit" value="Enviar Apuesta" class="btn btn-success pull-right" />
+        </div>
+</form>
+{% else %}
+<h4>Por el momento, no hay apuestas vigentes.</h4>
+{% endif %}
+
+{% endblock %}

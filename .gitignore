@@ -1,0 +1,7 @@
+/web/bundles/
+/app/bootstrap*
+/app/cache/*
+/app/logs/*
+/app/config/parameters.yml
+/vendor/
+/composer.phar

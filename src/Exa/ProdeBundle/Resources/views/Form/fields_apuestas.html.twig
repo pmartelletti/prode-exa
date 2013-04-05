@@ -1,0 +1,9 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block apuesta_widget %}
+<tr>
+    <td colspan="2">{{ form_widget(form.prediccion[0]) }} {{ form.vars.value.partido.equipo1.name }}</td>
+    <td class="prode-tarjeta-centered" colspan="">{{ form_widget(form.prediccion[1]) }} </td>
+    <td class="prode-tarjeta-right" colspan="2">{{ form.vars.value.partido.equipo2.name }} {{ form_widget(form.prediccion[2]) }} </td>
+</tr>
+{% endblock %}

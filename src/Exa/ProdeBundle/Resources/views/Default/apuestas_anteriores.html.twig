@@ -1,0 +1,38 @@
+{# empty Twig template #}
+{% extends 'ExaProdeBundle:Default:authenticated.html.twig' %}
+{% block pagecontent %}
+<h3>Apuesta terminadas</h3>
+<hr>
+{% if Tapuestas is not null %}
+{% for Tapuesta in Tapuestas %}
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr class="prode-tarjeta-header">
+            <td colspan="2" class="prode-tarjeta-right">{{ Tapuesta.fecha }}</td>
+        </tr>
+        <tr>
+            <td><strong>Partido</stron></td>
+            <td class="prode-tarjeta-centered"><strong>Predicción</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for apuesta in Tapuesta.apuestas %}
+        <tr>
+            <td>{{ apuesta.partido }}</td>
+            <td class="prode-tarjeta-centered {% if apuesta.acertoResultado %}prode-acierto{% else %}prode-sin-acierto{% endif %}" >{{ apuesta.prediccion }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2" class="prode-tarjeta-right">Total aciertos: {{ Tapuesta.aciertos }}</td>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+{% endfor%}
+{% else %}
+<p>El usuario no tiene apuestas anteriores</p>
+{% endif %}
+
+{% endblock %}

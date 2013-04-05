@@ -1,0 +1,11 @@
+{% extends 'ExaProdeBundle:Default:authenticated.html.twig' %}
+
+{% block pagecontent %}
+{% include "FOSUserBundle:Profile:show_content.html.twig" %}
+<div class="form-actions">
+    <p class="pull-right">
+        <a href="{{ path('fos_user_profile_edit') }}" class="btn btn-info">Modificar Perfil</a>
+        <a href="{{ path('fos_user_change_password') }}" class="btn btn-danger">Modificar contraseña</a>
+    </p>
+</div>
+{% endblock pagecontent %}

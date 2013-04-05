@@ -1,0 +1,16 @@
+exa_prode_homepage:
+    pattern:  /
+    defaults: { _controller: ExaProdeBundle:Default:index }
+    methods: [GET, POST]
+    
+apuestas_anteriores:
+    pattern: /apuestas/anteriores
+    defaults: { _controller: ExaProdeBundle:Default:apuestasAnteriores }
+    methods: [GET]
+    
+ranking_jugadores:
+  pattern: /ranking/{type}
+  defaults: { _controller: ExaProdeBundle:Default:ranking }
+  methods: [GET]
+  
+    

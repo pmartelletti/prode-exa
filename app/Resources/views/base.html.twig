@@ -1,0 +1,59 @@
+{# app/Resources/views/base.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Prode - Exa! Futbol{% endblock %}</title>
+        {% block stylesheets %}
+            <link href='http://fonts.googleapis.com/css?family=Inder' rel='stylesheet' type='text/css'>
+            <link href="{{ asset('bundles/exaprode/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+            <link href="{{ asset('bundles/exaprode/css/bootstrap-responsive.min.css') }}" type="text/css" rel="stylesheet" />
+            <link href="{{ asset('bundles/exaprode/css/prode.css') }}" type="text/css" rel="stylesheet" />
+        {% endblock %}
+        <style type="text/css">{% block stylesheets_code %}{%endblock %}</style>
+    </head>
+    <body>
+        <div class="page-content-wrapper">                
+            <div class="navbar navbar-inverse">
+                <div class="navbar-inner">
+                  <div class="container-fluid">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="{{ path('exa_prode_homepage') }}">Exa! Futbol - Prode</a>
+                    <div class="nav-collapse collapse">
+                      <ul class="nav pull-right">
+                        {% block userinfo %}
+                        <li><a href="{{ path("fos_user_registration_register") }}">Registrate</a></li>
+                        <li><a href="{{ path("fos_user_security_login") }}">Login</a></li>
+                        {% endblock %}
+                        </ul>  
+                    </div><!--/.nav-collapse -->
+                  </div>
+                </div>
+              </div>
+            {% block body %}
+                <div class="container">
+                    {% block flash %}
+                        {% for type,messages in app.session.flashbag.all %}
+                            {% for message in messages %}
+                        <div class="alert alert-{{ type }}">
+                            <i class="icon-bell"></i> {{ message }}
+                        </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endblock %}
+                    <div class="row">
+                    {% block content %}{% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+        {% block javascripts %}
+            <script src="{{ asset('bundles/exaprode/js/jquery.min.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/exaprode/js/bootstrap.min.js') }}" type="text/javascript"></script>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,22 @@
+parameters:
+#    exa_prode.example.class: Exa\ProdeBundle\Example
+
+#services:
+#    exa_prode.example:
+#        class: %exa_prode.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+services:
+    exa_prode.registration.form.type:
+        class: Exa\ProdeBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: exa_prode_registration }
+            
+    tarjeta_apuestas_usuario:
+        class: Exa\ProdeBundle\Services\TarjetaApuestasManager
+        arguments: [ @doctrine.orm.entity_manager ]
+        
+    posiciones_usuario:
+      class: Exa\ProdeBundle\Services\PosicionesUsuarioManager
+      arguments: [ @doctrine.orm.entity_manager, @tarjeta_apuestas_usuario ]

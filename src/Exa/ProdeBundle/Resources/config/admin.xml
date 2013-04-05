@@ -1,0 +1,48 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+       <service id="sonata.admin.liga" class="Exa\ProdeBundle\Admin\LigaAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Info del Torneo" label="Ligas"/>
+          <argument />
+          <argument>Exa\ProdeBundle\Entity\Liga</argument>
+          <argument>SonataAdminBundle:CRUD</argument>
+      </service>
+      <service id="sonata.admin.equipo" class="Exa\ProdeBundle\Admin\EquipoAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Info del Torneo" label="Equipos"/>
+          <argument />
+          <argument>Exa\ProdeBundle\Entity\Equipo</argument>
+          <argument>SonataAdminBundle:CRUD</argument>
+      </service>
+      <service id="sonata.admin.usuario" class="Exa\ProdeBundle\Admin\UsuarioAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Info del Torneo" label="Usuarios"/>
+          <argument />
+          <argument>Exa\ProdeBundle\Entity\Usuario</argument>
+          <argument>SonataAdminBundle:CRUD</argument>
+      </service>
+      <service id="sonata.admin.fecha" class="Exa\ProdeBundle\Admin\FechaAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Resultados - Prode" label="Fechas"/>
+          <argument />
+          <argument>Exa\ProdeBundle\Entity\Fecha</argument>
+          <argument>SonataAdminBundle:CRUD</argument>
+      </service>
+      <service id="sonata.admin.partido" class="Exa\ProdeBundle\Admin\PartidoAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Resultados - Prode" label="Partidos"/>
+          <argument />
+          <argument>Exa\ProdeBundle\Entity\Partido</argument>
+          <argument>SonataAdminBundle:CRUD</argument>
+      </service>
+      <service id="sonata.admin.tarjetas" class="Exa\ProdeBundle\Admin\TarjetaApuestasAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Resultados - Prode" label="Apuestas"/>
+          <argument />
+          <argument>Exa\ProdeBundle\Entity\TarjetaApuestas</argument>
+          <argument>ExaProdeBundle:TarjetaApuestasAdmin</argument>
+      </service>
+      <service id="sonata.admin.apuesta" class="Exa\ProdeBundle\Admin\ApuestaAdmin">
+          <tag name="sonata.admin" manager_type="orm" group="Resultados - Prode" label="Apuestas separadas"/>
+          <argument />
+          <argument>Exa\ProdeBundle\Entity\Apuesta</argument>
+          <argument>SonataAdminBundle:CRUD</argument>
+      </service>
+   </services>
+</container>

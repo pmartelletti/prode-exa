@@ -1,0 +1,63 @@
+body {
+    font-family: 'Inder', sans-serif;
+}
+
+div.page-content-wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -359px;
+}
+
+/** TARJETA DE APUESTAS **/
+.prode-veda {
+    text-align: right;
+}
+.prode-tarjeta-header {
+    text-align: center !important;
+    color: white !important;
+    background-color: black !important;
+    font-size: 16px !important;
+}
+
+.prode-tarjeta-centered {
+    text-align: center !important;
+}
+
+.prode-tarjeta-right {
+    text-align: right !important;
+}
+
+.prode-acierto {
+    color: #009933 !important;
+}
+
+.prode-sin-acierto {
+    color: #da4f49;
+}
+
+/** RESULTADOS USUARIO **/
+.prode-posiciones-usuario {
+    background-color: #f9f9f9 !important;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.posicion span {
+    font-size: 50px;
+    font-weight: bold;
+    display: block;
+    height: 35px;
+    padding-top: 10px;
+}
+
+.posicion {
+    text-align: center;
+    padding-bottom: 10px;
+}

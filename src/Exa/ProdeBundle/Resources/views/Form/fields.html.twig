@@ -1,0 +1,23 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block form_row %}
+    <div class="control-group {% if errors|length > 0 %} error {% endif %}">
+        {{ form_label(form, null, { 'label_attr': {'class': 'control-label'} }) }}
+        <div class="controls">    
+            {{ form_widget(form) }}
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endblock form_row %}
+
+{% block form_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+    <span class="help-inline">
+        {% for error in errors %}
+            {{ error.message }},
+        {% endfor %}
+    </span>
+    {% endif %}
+{% endspaceless %}
+{% endblock form_errors %}

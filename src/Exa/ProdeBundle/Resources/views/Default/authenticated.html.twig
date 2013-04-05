@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} {{ parent() }} - Bienvenido {{app.user.name}}! {% endblock %}
+
+{% block userinfo %} 
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> {{ app.user.nameteam }}  <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href="{{ path('fos_user_profile_show') }}"><i class="icon-pencil"></i> Mi Usuario</a></li>
+        <li><a href="{{ path('apuestas_anteriores')}}"><i class="icon-list-alt"></i> Mis apuestas</a></li>
+        {% if is_granted('ROLE_ADMIN') %}
+        <li class="divider"></li>
+        <li><a href="{{ path('sonata_admin_dashboard') }}"><i class="icon-eye-open"></i> Administrar el sitio</a></li>
+        {% endif %}
+        {% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+        <li class="divider"></li>
+        <li><a href="{{ path('exa_prode_homepage', {_switch_user: '_exit'}) }}">Exit impersonation</a></li>
+        {% endif %}
+        <li class="divider"></li>
+        <li><a href="./logout"><i class="icon-off"></i> Cerrar sesion</a></li>
+    </ul>
+</li>
+{% endblock %}
+
+{% block content %}
+
+<div class="span3 bs-docs-sidebar">
+    <ul class="nav nav-tabs nav-stacked">
+      <li><a href="{{ path('exa_prode_homepage') }}"><i class="icon-chevron-right"></i> Tarjeta de Apuestas Actual</a></li>
+      <li><a href="{{ path('apuestas_anteriores') }}"><i class="icon-chevron-right"></i> Apuestas anteriores</a></li>
+      <li><a href="{{ path('ranking_jugadores', {'type': 'fecha'}) }}"><i class="icon-chevron-right"></i> Ranking por fecha</a></li>
+      <li><a href="{{ path('ranking_jugadores', {'type': 'torneo'}) }}"><i class="icon-chevron-right"></i> Ranking por torneo</a></li>      
+    </ul>
+</div>
+<div class="span6">
+    {% block pagecontent %}{% endblock %}
+</div>
+<div class="span3 award">
+   {{ render(controller('ExaProdeBundle:Default:userPositions')) }}
+</div>
+
+{% endblock %}
