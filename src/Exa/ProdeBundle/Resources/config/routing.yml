@@ -13,4 +13,14 @@ ranking_jugadores:
   defaults: { _controller: ExaProdeBundle:Default:ranking }
   methods: [GET]
   
+ws_marcar_partido:
+  pattern: /ws/marcarpartido
+  defaults: { _controller: ExaProdeBundle:Webservice:marcarPartido }
+  methods: [GET]
+  
+ws_calcular_fecha:
+  pattern: /ws/calcularfecha
+  defaults: { _controller: ExaProdeBundle:Webservice:calcularFecha }
+  methods: [GET]
+  
     

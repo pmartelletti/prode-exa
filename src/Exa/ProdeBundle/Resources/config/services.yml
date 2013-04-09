@@ -20,3 +20,7 @@ services:
     posiciones_usuario:
       class: Exa\ProdeBundle\Services\PosicionesUsuarioManager
       arguments: [ @doctrine.orm.entity_manager, @tarjeta_apuestas_usuario ]
+      
+    apuestas_manager:
+      class: Exa\ProdeBundle\Services\ApuestasManager
+      arguments: [@doctrine.orm.entity_manager]

@@ -2,8 +2,17 @@
 
 {% block apuesta_widget %}
 <tr>
-    <td colspan="2">{{ form_widget(form.prediccion[0]) }} {{ form.vars.value.partido.equipo1.name }}</td>
-    <td class="prode-tarjeta-centered" colspan="">{{ form_widget(form.prediccion[1]) }} </td>
-    <td class="prode-tarjeta-right" colspan="2">{{ form.vars.value.partido.equipo2.name }} {{ form_widget(form.prediccion[2]) }} </td>
+    <td colspan="2">
+        {{ form_widget(form.prediccion[0]) }} {{ form.vars.value.partido.equipo1.name }}
+        {{ render(controller('ExaProdeBundle:Default:porcentajePrediccion', { 'partido': form.vars.value.partido.id, 'prediccion': "L"  })) }}
+    </td>
+    <td class="prode-tarjeta-centered" colspan="">
+        {{ form_widget(form.prediccion[1]) }}
+        {{ render(controller('ExaProdeBundle:Default:porcentajePrediccion', { 'partido': form.vars.value.partido.id, 'prediccion': "E"  })) }}
+    </td>
+    <td class="prode-tarjeta-right" colspan="2">
+    {{ form.vars.value.partido.equipo2.name }} {{ form_widget(form.prediccion[2]) }}
+    {{ render(controller('ExaProdeBundle:Default:porcentajePrediccion', { 'partido': form.vars.value.partido.id, 'prediccion': "V"  })) }}
+    </td>
 </tr>
 {% endblock %}

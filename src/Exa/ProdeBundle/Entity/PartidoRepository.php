@@ -12,4 +12,22 @@ use Doctrine\ORM\EntityRepository;
  */
 class PartidoRepository extends EntityRepository
 {    
+    public function getPartidoByEquipos($equipo1, $equipo2) {
+        $query = $this->getEntityManager()->createQuery('
+            SELECT p FROM ExaProdeBundle:Partido p
+            JOIN p.equipo1 e1
+            JOIN p.equipo2 e2
+            JOIN p.fecha f
+            WHERE (e1.name LIKE :equipo1 OR e2.name LIKE :equipo1) 
+            AND (e1.name LIKE :equipo2 OR e2.name LIKE :equipo2)
+            AND p.jugado = :jugado
+            ORDER BY f.veda ASC')
+                ->setParameters(array(
+                    'equipo1' => sprintf("%%%s%%",$equipo1),
+                    'equipo2' => sprintf("%%%s%%",$equipo2),
+                    'jugado' => false
+                ))
+                ->setMaxResults(1);
+        return $query->getResult();
+    }
 }

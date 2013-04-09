@@ -4,11 +4,13 @@ namespace Exa\ProdeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Exa\ProdeBundle\Form\Type\TarjetaApuestasFormType;
+use Exa\ProdeBundle\Entity\Partido;
 
 class DefaultController extends Controller
 {
     public function indexAction()
     {
+        
         $usuario = $this->getUser();
         $fecha = $this->getDoctrine()->getRepository("ExaProdeBundle:Fecha")->getFechaForLiga($usuario->getEquipo()->getLiga());
         $tarjetaApuestas = $this->get('tarjeta_apuestas_usuario')->getPreparedTarjetaApuesta($usuario, $fecha);
@@ -53,13 +55,16 @@ class DefaultController extends Controller
         $posiciones = $this->get('posiciones_usuario')->getPosicionesParaTodasLigas($type);
         $template = $type == "fecha" ? "ExaProdeBundle:Default:ranking_jugadores.html.twig" :
             "ExaProdeBundle:Default:ranking_jugadores_torneo.html.twig";
-        //echo "<pre>";
-        //var_dump(gettype($posiciones[0][0][0]->getFecha())); exit;
-        //echo "</pre>";
-        //var_dump(get_class($posiciones[0][0][0])); exit;
         return $this->render(
                 $template,
                 array('tipo' => $type, 'posiciones' => $posiciones)
+        );
+    }
+    
+    public function porcentajePrediccionAction($partido, $prediccion) {
+        $porc = $this->getDoctrine()->getRepository('ExaProdeBundle:Apuesta')->getPorcentajePrediccion($partido, $prediccion);
+        return $this->render('ExaProdeBundle:Default:apuesta_porcentaje.html.twig', 
+                array('porcentaje' =>  sprintf("%s%%", $porc * 100), 'prediccion' => $prediccion)
         );
     }
     

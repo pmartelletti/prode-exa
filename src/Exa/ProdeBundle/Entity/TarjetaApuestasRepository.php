@@ -41,15 +41,8 @@ class TarjetaApuestasRepository extends EntityRepository
         $query->from('ExaProdeBundle:TarjetaApuestas', 't')
                 ->andWhere('t.calculado = :calculado')
                 ->addOrderBy('t.aciertos', 'DESC')
-                ->addOrderBy('t.usuario', 'DESC');
-                /*$this->getEntityManager()->createQuery('
-            SELECT t FROM ExaProdeBundle:TarjetaApuestas t
-            WHERE t.fecha = :fecha AND t.calculado = :calculado
-            ORDER BY t.aciertos DESC, t.usuario DESC')
-            ->setParameters(array(
-                'fecha' => $tarjeta->getFecha() ,
-                'calculado' => true
-            ));*/
+                ->join('t.usuario', 'u')
+                ->addOrderBy('u.name', 'ASC');
         if( !empty($fecha) ) {
             $parameters['fecha'] = $fecha;
             $query = $query->select('t')
@@ -62,8 +55,9 @@ class TarjetaApuestasRepository extends EntityRepository
             $query = $this->getEntityManager()->createQuery('
                     SELECT t, SUM(t.aciertos) AS total FROM ExaProdeBundle:TarjetaApuestas t
                     JOIN t.fecha f WHERE t.calculado = :calculado AND f.liga = :liga
+                    JOIN t.usuario u
                     GROUP BY t.usuario
-                    ORDER BY total DESC, t.usuario ASC
+                    ORDER BY total DESC, u.name ASC
                 ')->setParameters($parameters);
         }
         

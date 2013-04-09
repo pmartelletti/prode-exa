@@ -36,6 +36,18 @@ div.page-content-wrapper {
     color: #da4f49;
 }
 
+.prode-porcentaje-apuesta {
+    display: block;
+    color: #AAAAAA;
+    font-size: 10px;
+    margin: 0 20px;
+}
+
+.prode-porcentaje-abajo {
+    display: block;
+    text-align: center;
+}
+
 /** RESULTADOS USUARIO **/
 .prode-posiciones-usuario {
     background-color: #f9f9f9 !important;

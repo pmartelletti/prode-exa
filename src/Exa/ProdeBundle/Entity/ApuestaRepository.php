@@ -13,4 +13,15 @@ use Doctrine\ORM\EntityRepository;
 class ApuestaRepository extends EntityRepository
 {
     
+    public function getPorcentajePrediccion($partido, $prediccion) {
+        return $this->getEntityManager()->getConnection()->fetchColumn('
+            SELECT ROUND((COUNT(*) / (SELECT COUNT(*) FROM Apuesta WHERE `partido_id` = :partido AND prediccion IS NOT NULL)),2)
+            FROM Apuesta a
+            WHERE `partido_id` = :partido AND prediccion = :prediccion
+            GROUP BY prediccion', array(
+                'partido' => $partido,
+                'prediccion' => $prediccion
+            ));        
+    }
+    
 }
