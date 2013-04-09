@@ -54,8 +54,9 @@ class TarjetaApuestasRepository extends EntityRepository
             $parameters['liga'] = $liga;
             $query = $this->getEntityManager()->createQuery('
                     SELECT t, SUM(t.aciertos) AS total FROM ExaProdeBundle:TarjetaApuestas t
-                    JOIN t.fecha f WHERE t.calculado = :calculado AND f.liga = :liga
+                    JOIN t.fecha f 
                     JOIN t.usuario u
+                    WHERE t.calculado = :calculado AND f.liga = :liga
                     GROUP BY t.usuario
                     ORDER BY total DESC, u.name ASC
                 ')->setParameters($parameters);
