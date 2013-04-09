@@ -33,7 +33,7 @@ class PosicionesUsuarioManager {
         $posiciones = $this->em->getRepository('ExaProdeBundle:TarjetaApuestas')
                 ->getPosicionesFecha($fecha, $liga);
         $pos = $this->getPositionForUser($usuario, $posiciones, empty($fecha));
-        return empty($pos) ? "No calculada todavía" : $pos;
+        return empty($pos) ? array("posicion" => "No calculada todavía", "aciertos" => "-") : $pos;
     }
     
     private function getPositionForUser(Usuario $usuario, $posiciones, $total = false) {

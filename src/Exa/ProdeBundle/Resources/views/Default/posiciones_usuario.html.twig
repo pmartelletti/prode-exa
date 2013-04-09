@@ -3,7 +3,11 @@
     <h4>Resultados última fecha</h4>
     {% if fecha is not null %}
     <h5>{{ fecha.name }} - {{fecha.liga.shortname }}</h5>
+    {% if posicion_fecha.aciertos > 0 %}
     <p class="posicion"><span>{{ posicion_fecha.posicion }}º</span>en la {{fecha.name}}, con <strong>{{posicion_fecha.aciertos}} aciertos.</strong></p>
+    {% else %}
+    <p>{{ posicion_fecha.posicion }}</p>
+    {% endif %}
     <p class="posicion"><span>{{ posicion_torneo.posicion }}º</span> en el torneo {{fecha.liga.shortname}}, con <strong>{{posicion_torneo.aciertos}} aciertos en total.</strong></p>
     {% else %}
     <p>El usuario no ha apostado todavía.</p>
