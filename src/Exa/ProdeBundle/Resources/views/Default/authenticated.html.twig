@@ -17,7 +17,7 @@
         <li><a href="{{ path('exa_prode_homepage', {_switch_user: '_exit'}) }}">Exit impersonation</a></li>
         {% endif %}
         <li class="divider"></li>
-        <li><a href="./logout"><i class="icon-off"></i> Cerrar sesion</a></li>
+        <li><a href="{{ path('fos_user_security_logout') }}"><i class="icon-off"></i> Cerrar sesion</a></li>
     </ul>
 </li>
 {% endblock %}

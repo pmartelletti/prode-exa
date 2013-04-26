@@ -10,6 +10,9 @@ fos_user:
     registration:
       form:
         type: exa_prode_registration
+    from_email:
+        address:        mailer@prodeexa.com.ar
+        sender_name:    Prode Exa! Futbol
 
 framework:
     #esi:             ~

@@ -9,8 +9,7 @@ use Exa\ProdeBundle\Entity\Partido;
 class DefaultController extends Controller
 {
     public function indexAction()
-    {
-        
+    {        
         $usuario = $this->getUser();
         $fecha = $this->getDoctrine()->getRepository("ExaProdeBundle:Fecha")->getFechaForLiga($usuario->getEquipo()->getLiga());
         $tarjetaApuestas = $this->get('tarjeta_apuestas_usuario')->getPreparedTarjetaApuesta($usuario, $fecha);

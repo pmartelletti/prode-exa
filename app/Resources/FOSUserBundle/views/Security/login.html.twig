@@ -17,10 +17,17 @@
     <input type="password" id="password" class="input-block-level" name="_password" required="required" placeholder="Password" />
 
     <label for="remember_me" class="checkbox" >
-        <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> No cerrar sesión
     </label>
 
-    <input class="btn btn-info" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+    <div class="actions">
+        <input class="btn btn-success btn-login " type="submit" id="_submit" name="_submit" value="Ingresar al Prode!" />
+        <hr>
+        <a class="pull-right" href="{{ path('fos_user_resetting_request') }}">Olvidó su contraseña?</a>
+    </div>
+    
+    
+    
 </form>
 {% endblock fos_user_content %}
 
@@ -49,5 +56,12 @@
         height: auto;
         margin-bottom: 15px;
         padding: 7px 9px;
+      }
+      .btn-login {
+        min-width: 180px;
+        padding: 8px;
+      }
+      div.actions {
+        text-align: center;
       }
 {% endblock %}
