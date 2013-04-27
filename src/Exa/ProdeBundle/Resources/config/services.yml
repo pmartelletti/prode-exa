@@ -15,12 +15,16 @@ services:
             
     tarjeta_apuestas_usuario:
         class: Exa\ProdeBundle\Services\TarjetaApuestasManager
-        arguments: [ @doctrine.orm.entity_manager ]
+        arguments: [@doctrine.orm.entity_manager ]
         
     posiciones_usuario:
       class: Exa\ProdeBundle\Services\PosicionesUsuarioManager
-      arguments: [ @doctrine.orm.entity_manager, @tarjeta_apuestas_usuario ]
+      arguments: [@doctrine.orm.entity_manager, @tarjeta_apuestas_usuario ]
       
     apuestas_manager:
       class: Exa\ProdeBundle\Services\ApuestasManager
       arguments: [@doctrine.orm.entity_manager]
+      
+    mandrill_mailer:
+      class: Exa\ProdeBundle\Services\MandrillMailer
+      arguments: [@templating.helper.router, @twig]

@@ -27,7 +27,8 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\CacheBundle\SonataCacheBundle(),
-            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle()
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Hip\MandrillBundle\HipMandrillBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

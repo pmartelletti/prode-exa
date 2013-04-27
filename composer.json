@@ -27,7 +27,8 @@
         "sonata-project/intl-bundle": "dev-master",
         "sonata-project/user-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "1.1.x-dev",
-        "sonata-project/block-bundle": "2.2.*@dev"
+        "sonata-project/block-bundle": "2.2.*@dev",
+        "hipaway-travel/mandrill-bundle": "dev-master"
         
     },
     "scripts": {

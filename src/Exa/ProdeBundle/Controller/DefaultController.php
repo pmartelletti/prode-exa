@@ -6,10 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Exa\ProdeBundle\Form\Type\TarjetaApuestasFormType;
 use Exa\ProdeBundle\Entity\Partido;
 
+use Hip\MandrillBundle\Message;
+use Hip\MandrillBundle\Dispatcher;
+
 class DefaultController extends Controller
 {
     public function indexAction()
-    {        
+    {   
         $usuario = $this->getUser();
         $fecha = $this->getDoctrine()->getRepository("ExaProdeBundle:Fecha")->getFechaForLiga($usuario->getEquipo()->getLiga());
         $tarjetaApuestas = $this->get('tarjeta_apuestas_usuario')->getPreparedTarjetaApuesta($usuario, $fecha);

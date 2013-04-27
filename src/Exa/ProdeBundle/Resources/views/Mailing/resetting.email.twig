@@ -1,0 +1,29 @@
+{# src/Acme/DemoBundle/Resources/views/User/resetting.email.twig #}
+
+{% block subject %}Restablecer Contraseña{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+Hola, {{ user.username }} !
+
+Te enviamos éste email porque has solicitado restablecer tu contraseña. Para hacerlo, hacé click en el siguiente link: 
+
+{{ confirmationUrl }}
+
+Si no solicitaste que te enviemos éste email, por favor ignoralo.
+
+Saludos,
+El equipo de Prode Exa! Fútbol
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+Hola, {{ user.username }} !
+
+<p>Te enviamos éste email porque has solicitado restablecer tu contraseña. Para hacerlo, hacé click en el siguiente link: <br> {{ confirmationUrl }} </p>
+<p>Si no solicitaste que te enviemos éste email, por favor ignoralo.</p>
+
+<p>Saludos,<br/>
+    <strong>El equipo de Prode Exa! Fútbol</strong>
+</p>
+{% endblock %}
