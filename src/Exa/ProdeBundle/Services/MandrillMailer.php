@@ -10,6 +10,7 @@ namespace Exa\ProdeBundle\Services;
 use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Mailer\MailerInterface;
 use Hip\MandrillBundle\Message;
+use Hip\MandrillBundle\Dispatcher;
 
 use Symfony\Bundle\FrameworkBundle\Templating\Helper\RouterHelper;
 
@@ -24,8 +25,8 @@ class MandrillMailer implements MailerInterface {
     protected $router;
     protected $twig;
     
-    public function __construct(RouterHelper $router, \Twig_Environment $twig) {
-        $this->mailer = new Message();
+    public function __construct(Dispatcher $mailer, RouterHelper $router, \Twig_Environment $twig) {
+        $this->mailer = $mailer;
         $this->router = $router;
         $this->twig = $twig;
     }
@@ -45,8 +46,8 @@ class MandrillMailer implements MailerInterface {
     }
 
     public function sendResettingEmailMessage(UserInterface $user) {
-        $template = "ExaProdeBundle:Mailing:resetting.email.twig:";
-        $url = $this->router->generate('fos_user_registration_confirm', array('token' => $user->getConfirmationToken()), true);
+        $template = "ExaProdeBundle:Mailing:resetting.email.twig";
+        $url = $this->router->generate('fos_user_resetting_reset', array('token' => $user->getConfirmationToken()), true);
         $context = array(
             'user' => $user,
             'confirmationUrl' => $url
@@ -64,12 +65,14 @@ class MandrillMailer implements MailerInterface {
     protected function sendMessage($templateName, $context, $toEmail)
     {   
         
+        $message = new Message();
+        
         $template = $this->twig->loadTemplate($templateName);
         $subject = $template->renderBlock('subject', $context);
         $textBody = $template->renderBlock('body_text', $context);
         $htmlBody = $template->renderBlock('body_html', $context);
 
-        $this->mailer
+        $message
             ->addTo($toEmail)
             ->setSubject($subject)
             ->setText($textBody)

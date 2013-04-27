@@ -13,11 +13,11 @@ fos_user:
     resetting:
         email:
             from_email:
-                address: mailes@prodeexa.com.ar
+                address: equipo@prodeexa.com.ar
                 sender_name: Prode Exa! Futbol
             template: ExaProdeBundle:Mailing:resetting.email.twig
     service:
-        mailer: fos_user.mailer.twig_swift
+        mailer: mandrill_mailer
 
 framework:
     #esi:             ~

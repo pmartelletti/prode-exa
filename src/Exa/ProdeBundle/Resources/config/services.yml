@@ -27,4 +27,4 @@ services:
       
     mandrill_mailer:
       class: Exa\ProdeBundle\Services\MandrillMailer
-      arguments: [@templating.helper.router, @twig]
+      arguments: [@hip_mandrill.dispatcher, @templating.helper.router, @twig]
