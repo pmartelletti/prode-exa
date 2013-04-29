@@ -43,7 +43,7 @@ class Fecha
     private $liga;
     
     /**
-     *@ORM\OneToMany(targetEntity="Apuesta", mappedBy="partidos", cascade={"all"})
+     *@ORM\OneToMany(targetEntity="Partido", mappedBy="fecha", cascade={"all"})
      */
     private $partidos;
     

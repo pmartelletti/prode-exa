@@ -38,4 +38,21 @@ class FechaRepository extends EntityRepository
         return $query->getQuery()->getOneOrNullResult();
     }
     
+    public function getForParams($fecha, $liga) {
+        $query = $this->getEntityManager()
+                ->createQuery('
+                    SELECT f FROM ExaProdeBundle:Fecha f
+                    JOIN f.liga l
+                    WHERE l.codigo = :liga
+                    AND l.activa = :activa
+                    AND f.name like :fecha')
+                ->setParameters(array(
+                    "liga" => $liga,
+                    "activa" => true,
+                    "fecha" => sprintf("%%Fecha %s%%",$fecha)
+                    ))
+                ->setMaxResults(1);
+        return $query->getOneOrNullResult();
+    }
+    
 }

@@ -28,3 +28,15 @@ services:
     mandrill_mailer:
       class: Exa\ProdeBundle\Services\MandrillMailer
       arguments: [@hip_mandrill.dispatcher, @templating.helper.router, @twig]
+      
+    importing_matches:
+      class: Exa\ProdeBundle\Services\ImportingService
+      arguments: [@doctrine.orm.entity_manager, @fechas_manager, @partidos_manager]
+      
+    fechas_manager:
+      class: Exa\ProdeBundle\Services\FechasManager
+      arguments: [@doctrine.orm.entity_manager]
+      
+    partidos_manager:
+      class: Exa\ProdeBundle\Services\PartidosManager
+      arguments: [@doctrine.orm.entity_manager]

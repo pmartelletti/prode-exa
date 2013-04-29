@@ -6,6 +6,20 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ass\\XmlSecurity' => $vendorDir . '/ass/xmlsecurity/src',
+    'Zend\\Validator\\' => $vendorDir . '/zendframework/zend-validator',
+    'Zend\\Uri\\' => $vendorDir . '/zendframework/zend-uri',
+    'Zend\\Stdlib\\' => $vendorDir . '/zendframework/zend-stdlib',
+    'Zend\\Soap\\' => $vendorDir . '/zendframework/zend-soap',
+    'Zend\\ServiceManager\\' => $vendorDir . '/zendframework/zend-servicemanager',
+    'Zend\\Server\\' => $vendorDir . '/zendframework/zend-server',
+    'Zend\\Mime\\' => $vendorDir . '/zendframework/zend-mime',
+    'Zend\\Mail\\' => $vendorDir . '/zendframework/zend-mail',
+    'Zend\\Loader\\' => $vendorDir . '/zendframework/zend-loader',
+    'Zend\\I18n\\' => $vendorDir . '/zendframework/zend-i18n',
+    'Zend\\EventManager\\' => $vendorDir . '/zendframework/zend-eventmanager',
+    'Zend\\Escaper\\' => $vendorDir . '/zendframework/zend-escaper',
+    'Zend\\Code\\' => $vendorDir . '/zendframework/zend-code',
     'Twig_Extensions_' => $vendorDir . '/twig/extensions/lib',
     'Twig_' => $vendorDir . '/twig/twig/lib',
     'Symfony\\Bundle\\SwiftmailerBundle' => $vendorDir . '/symfony/swiftmailer-bundle',
@@ -51,6 +65,9 @@ return array(
     'Doctrine\\Bundle\\FixturesBundle' => $vendorDir . '/doctrine/doctrine-fixtures-bundle',
     'Doctrine\\Bundle\\DoctrineBundle' => $vendorDir . '/doctrine/doctrine-bundle',
     'CG\\' => $vendorDir . '/jms/cg/src',
+    'BeSimple\\SoapServer' => $vendorDir . '/besimple/soap-server/BeSimple/SoapServer/src',
+    'BeSimple\\SoapCommon' => $vendorDir . '/besimple/soap-common/src',
+    'BeSimple\\SoapBundle' => $vendorDir . '/besimple/soap-bundle',
     'Assetic' => $vendorDir . '/kriswallsmith/assetic/src',
     '' => $baseDir . '/src',
 );

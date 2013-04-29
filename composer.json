@@ -28,7 +28,11 @@
         "sonata-project/user-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "1.1.x-dev",
         "sonata-project/block-bundle": "2.2.*@dev",
-        "hipaway-travel/mandrill-bundle": "dev-master"
+        "hipaway-travel/mandrill-bundle": "dev-master",
+        "besimple/soap-bundle": "dev-master",
+        "besimple/soap-common": "dev-master",
+        "ass/xmlsecurity":      "dev-master",
+        "besimple/soap-server": "dev-master"
         
     },
     "scripts": {

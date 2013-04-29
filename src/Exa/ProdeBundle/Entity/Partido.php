@@ -60,7 +60,7 @@ class Partido
      *
      * @ORM\Column(name="jugado", type="boolean")
      */
-    private $jugado;
+    private $jugado = false;
 
     /**
      * @var string

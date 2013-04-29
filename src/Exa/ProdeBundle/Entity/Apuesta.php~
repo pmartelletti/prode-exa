@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Exa\ProdeBundle\Entity\ApuestaRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Apuesta
 {
@@ -39,7 +40,7 @@ class Apuesta
     /**
      * @var string
      *
-     * @ORM\Column(name="prediccion", type="string", length=1)
+     * @ORM\Column(name="prediccion", type="string", length=1, nullable=true)
      */
     private $prediccion;
 
@@ -139,6 +140,7 @@ class Apuesta
     public function setTarjetaApuestas(\Exa\ProdeBundle\Entity\TarjetaApuestas $tarjetaApuestas = null)
     {
         $this->tarjetaApuestas = $tarjetaApuestas;
+        $this->tarjetaApuestas->addApuesta($this);
     
         return $this;
     }
@@ -181,6 +183,10 @@ class Apuesta
      * @ORM\PreUpdate
      */
     public function createNameFromData() {
-        $this->setName(sprintf("%s, de %s)"), $this->getFecha()->getName(), $this->getUsuario()->getUsername());
+        $this->setName(sprintf("%s (%s)", $this->getPartido(), $this->getPrediccion()) );
+    }
+    
+    public function acertoResultado() {
+        return $this->getPrediccion() == $this->getPartido()->getResultado();
     }
 }

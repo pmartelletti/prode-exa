@@ -65,7 +65,7 @@ class Partido
     /**
      * @var string
      *
-     * @ORM\Column(name="resultado", type="string", length=2)
+     * @ORM\Column(name="resultado", type="string", length=2, nullable=true)
      */
     private $resultado;
     
@@ -79,7 +79,7 @@ class Partido
     }
     
     public function __toString() {
-        return $this->namef;
+        return $this->getName();
     }
 
 

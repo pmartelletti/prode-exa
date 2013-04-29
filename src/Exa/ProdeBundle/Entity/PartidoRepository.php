@@ -3,6 +3,7 @@
 namespace Exa\ProdeBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Exa\ProdeBundle\Entity\Fecha;
 
 /**
  * PartidoRepository
@@ -12,7 +13,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class PartidoRepository extends EntityRepository
 {    
-    public function getPartidoByEquipos($equipo1, $equipo2) {
+    public function getPartidoByEquipos(Fecha $fecha, $equipo1, $equipo2) {
         $query = $this->getEntityManager()->createQuery('
             SELECT p FROM ExaProdeBundle:Partido p
             JOIN p.equipo1 e1
@@ -21,13 +22,16 @@ class PartidoRepository extends EntityRepository
             WHERE (e1.name LIKE :equipo1 OR e2.name LIKE :equipo1) 
             AND (e1.name LIKE :equipo2 OR e2.name LIKE :equipo2)
             AND p.jugado = :jugado
+            AND p.fecha = :fecha
             ORDER BY f.veda ASC')
                 ->setParameters(array(
                     'equipo1' => sprintf("%%%s%%",$equipo1),
                     'equipo2' => sprintf("%%%s%%",$equipo2),
-                    'jugado' => false
+                    'jugado' => false,
+                    'fecha' => $fecha
                 ))
                 ->setMaxResults(1);
-        return $query->getResult();
+        return $query->getOneOrNullResult();
     }
+    
 }

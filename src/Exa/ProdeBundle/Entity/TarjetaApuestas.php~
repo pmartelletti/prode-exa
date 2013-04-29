@@ -46,7 +46,7 @@ class TarjetaApuestas
     
     /**
      * @var integer
-     * @ORM\Column(name="calculado", type="boolean")
+     * @ORM\Column(name="calculado", type="boolean", nullable=true)
      */
     private $calculado;
     
@@ -63,6 +63,12 @@ class TarjetaApuestas
     
     public function __construct() {
         $this->apuestas = new ArrayCollection();
+        $this->aciertos = 0;
+    }
+    
+    public function __toString() {
+        $res = isset($this->name) ? $this->getName() : "";
+        return $res;
     }
 
 
@@ -242,7 +248,7 @@ class TarjetaApuestas
      * @ORM\PreUpdate
      */
     public function createNameFromData() {
-        $this->setName(sprintf("%s, de %s)"), $this->getFecha()->getName(), $this->getUsuario()->getUsername());
+        $this->setName(sprintf("%s, de %s", $this->getFecha()->getName(), $this->getUsuario()->getUsername()));
     }
 
     /**
@@ -276,5 +282,19 @@ class TarjetaApuestas
     public function getApuestas()
     {
         return $this->apuestas;
+    }
+    
+    public function calcularResultado() {
+        $res = 0;
+        foreach($this->getApuestas() as $apuesta) {
+            //var_dump($apuesta->acertoResultado()); exit;
+            $res += $apuesta->acertoResultado() ? 1 : 0;
+        }
+        $this->setCalculado(true);
+        $this->setAciertos($res);
+    }
+    
+    public function hasApuestas() {
+        return !$this->getApuestas()->isEmpty();
     }
 }

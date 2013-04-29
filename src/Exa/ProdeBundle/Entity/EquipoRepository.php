@@ -12,4 +12,20 @@ use Doctrine\ORM\EntityRepository;
  */
 class EquipoRepository extends EntityRepository
 {
+    
+    public function findyByNameAndLiga($name, $liga) {
+        $query = $this->getEntityManager()
+                ->createQuery('SELECT e FROM ExaProdeBundle:Equipo e
+                    WHERE e.liga = :liga
+                    AND e.name like :name')
+                ->setParameters(array(
+                    "liga" => $liga,
+                    "name" => sprintf("%%%s%%", $name)
+                ))
+                ->setMaxResults(1);
+        
+        return $query->getOneOrNullResult();
+                
+    }
+    
 }

@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class LigaRepository extends EntityRepository
 {
+    
+    public function findByCodigo($codigo) {
+        $query = $this->getEntityManager()
+                ->createQuery('SELECT l FROM ExaProdeBundle:Liga l
+                    WHERE l.codigo = :codigo AND l.activa = :activa')
+                ->setParameters(array(
+                    "codigo" => $codigo,
+                    "activa" => true
+                ))
+                ->setMaxResults(1);
+        return $query->getOneOrNullResult();
+    }
 }

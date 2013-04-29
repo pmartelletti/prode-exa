@@ -39,6 +39,20 @@ class Liga
      */
     private $fechas;
     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codigo", type="string", length=4)
+     */
+    private $codigo = "";
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="activa", type="boolean")
+     */
+    private $activa = "";
+    
     public function __construct() {
         $this->equipos = new ArrayCollection();
         $this->fechas = new ArrayCollection();
@@ -150,5 +164,51 @@ class Liga
     public function getFechas()
     {
         return $this->fechas;
+    }
+
+    /**
+     * Set codigo
+     *
+     * @param string $codigo
+     * @return Liga
+     */
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
+    
+        return $this;
+    }
+
+    /**
+     * Get codigo
+     *
+     * @return string 
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+
+    /**
+     * Set activa
+     *
+     * @param boolean $activa
+     * @return Liga
+     */
+    public function setActiva($activa)
+    {
+        $this->activa = $activa;
+    
+        return $this;
+    }
+
+    /**
+     * Get activa
+     *
+     * @return boolean 
+     */
+    public function getActiva()
+    {
+        return $this->activa;
     }
 }

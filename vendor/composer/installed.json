@@ -2843,5 +2843,827 @@
             "Fixture",
             "persistence"
         ]
+    },
+    {
+        "name": "zendframework/zend-stdlib",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/Stdlib",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendStdlib.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendStdlib/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "pecl-weakref": "Implementation of weak references for Stdlib\\CallbackHandler"
+        },
+        "time": "2013-04-15 11:43:47",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\Stdlib\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "keywords": [
+            "stdlib",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-mime",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/Mime",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendMime.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendMime/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-stdlib": "self.version"
+        },
+        "time": "2013-02-14 14:56:52",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\Mime\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "keywords": [
+            "mime",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-loader",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/Loader",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendLoader.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendLoader/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "zendframework/zend-stdlib": "Zend\\Stdlib component"
+        },
+        "time": "2013-04-17 03:17:47",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\Loader\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "keywords": [
+            "loader",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-mail",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/Mail",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendMail.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendMail/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-loader": "self.version",
+            "zendframework/zend-mime": "self.version",
+            "zendframework/zend-stdlib": "self.version"
+        },
+        "suggest": {
+            "zendframework/zend-servicemanager": "Zend\\ServiceManager component",
+            "zendframework/zend-validator": "Zend\\Validator component"
+        },
+        "time": "2013-04-14 10:11:03",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\Mail\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "provides generalized functionality to compose and send both text and MIME-compliant multipart e-mail messages",
+        "keywords": [
+            "mail",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-servicemanager",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/ServiceManager",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendServiceManager.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendServiceManager/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "zendframework/zend-di": "Zend\\Di component"
+        },
+        "time": "2013-04-17 11:42:28",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\ServiceManager\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "keywords": [
+            "servicemanager",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-i18n",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/I18n",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendI18n.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendI18n/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "ext-intl": "*",
+            "php": ">=5.3.3",
+            "zendframework/zend-stdlib": "self.version"
+        },
+        "suggest": {
+            "zendframework/zend-filter": "You should install this package to use the provided filters",
+            "zendframework/zend-validator": "You should install this package to use the provided validators",
+            "zendframework/zend-view": "You should install this package to use the provided view helpers"
+        },
+        "time": "2013-04-10 18:14:09",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\I18n\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "keywords": [
+            "i18n",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-validator",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/Validator",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendValidator.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendValidator/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-i18n": "self.version",
+            "zendframework/zend-servicemanager": "self.version",
+            "zendframework/zend-stdlib": "self.version"
+        },
+        "require-dev": {
+            "zendframework/zend-math": "self.version"
+        },
+        "suggest": {
+            "zendframework/zend-db": "Zend\\Db component",
+            "zendframework/zend-math": "Zend\\Math component"
+        },
+        "time": "2013-04-04 15:00:49",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\Validator\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "provides a set of commonly needed validators",
+        "keywords": [
+            "validator",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-escaper",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/Escaper",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendEscaper.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendEscaper/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2013-04-17 11:42:28",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\Escaper\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "keywords": [
+            "escaper",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-uri",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/Uri",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendUri.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendUri/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-escaper": "self.version",
+            "zendframework/zend-validator": "self.version"
+        },
+        "time": "2013-04-17 11:42:28",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\Uri\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "a component that aids in manipulating and validating » Uniform Resource Identifiers (URIs)",
+        "keywords": [
+            "uri",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-eventmanager",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/EventManager",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendEventManager.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendEventManager/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-stdlib": "self.version"
+        },
+        "time": "2013-04-15 20:25:51",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\EventManager\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "keywords": [
+            "eventmanager",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-code",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/Code",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendCode.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendCode/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-eventmanager": "self.version"
+        },
+        "require-dev": {
+            "doctrine/common": ">=2.1"
+        },
+        "suggest": {
+            "doctrine/common": "Doctrine\\Common >=2.1 for annotation features"
+        },
+        "time": "2013-04-17 11:42:28",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\Code\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "provides facilities to generate arbitrary code using an object oriented interface",
+        "keywords": [
+            "code",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-server",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/Server",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendServer.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendServer/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-code": "self.version",
+            "zendframework/zend-stdlib": "self.version"
+        },
+        "time": "2013-04-14 22:44:32",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\Server\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "keywords": [
+            "server",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-soap",
+        "version": "2.1.5",
+        "version_normalized": "2.1.5.0",
+        "target-dir": "Zend/Soap",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/Component_ZendSoap.git",
+            "reference": "release-2.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/Component_ZendSoap/zipball/release-2.1.5",
+            "reference": "release-2.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-server": "self.version",
+            "zendframework/zend-stdlib": "self.version",
+            "zendframework/zend-uri": "self.version"
+        },
+        "time": "2013-03-12 16:53:31",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev",
+                "dev-develop": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Zend\\Soap\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "keywords": [
+            "soap",
+            "zf2"
+        ]
+    },
+    {
+        "name": "ass/xmlsecurity",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/aschamberger/XmlSecurity.git",
+            "reference": "bc4b70c3d5096b3dc14159e548444cf509c61de7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/aschamberger/XmlSecurity/zipball/bc4b70c3d5096b3dc14159e548444cf509c61de7",
+            "reference": "bc4b70c3d5096b3dc14159e548444cf509c61de7",
+            "shasum": ""
+        },
+        "require": {
+            "lib-openssl": ">=0.9.0",
+            "php": ">=5.3.0"
+        },
+        "time": "2013-02-14 20:00:08",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "ass\\XmlSecurity": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Robert Richards",
+                "email": "rrichards@cdatazone.org"
+            },
+            {
+                "name": "Andreas Schamberger",
+                "email": "mail@andreass.net"
+            }
+        ],
+        "description": "The XmlSecurity library is written in PHP for working with XML Encryption and Signatures",
+        "homepage": "https://github.com/aschamberger/XmlSecurity",
+        "keywords": [
+            "encryption",
+            "security",
+            "signature",
+            "xml"
+        ]
+    },
+    {
+        "name": "besimple/soap-common",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/BeSimple/BeSimpleSoapCommon.git",
+            "reference": "db885b2be7328fd8e663ee256df2d8570daeac3c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/BeSimple/BeSimpleSoapCommon/zipball/db885b2be7328fd8e663ee256df2d8570daeac3c",
+            "reference": "db885b2be7328fd8e663ee256df2d8570daeac3c",
+            "shasum": ""
+        },
+        "require": {
+            "ass/xmlsecurity": "dev-master",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "mikey179/vfsstream": "dev-master"
+        },
+        "time": "2013-02-27 16:03:38",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "BeSimple\\SoapCommon": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Francis Besset",
+                "email": "francis.besset@gmail.com",
+                "homepage": "http://www.apercite.fr"
+            },
+            {
+                "name": "Andreas Schamberger",
+                "email": "mail@andreass.net"
+            },
+            {
+                "name": "Christian Kerl",
+                "email": "christian-kerl@web.de"
+            }
+        ],
+        "description": "Build and consume SOAP Common based web services",
+        "homepage": "https://github.com/BeSimple/BeSimpleSoapCommon",
+        "keywords": [
+            "soap",
+            "soap-common"
+        ]
+    },
+    {
+        "name": "besimple/soap-bundle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "BeSimple/SoapBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/BeSimple/BeSimpleSoapBundle.git",
+            "reference": "9d79916a6213bb2aee6c2e0cb96fd941587845ca"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/BeSimple/BeSimpleSoapBundle/zipball/9d79916a6213bb2aee6c2e0cb96fd941587845ca",
+            "reference": "9d79916a6213bb2aee6c2e0cb96fd941587845ca",
+            "shasum": ""
+        },
+        "require": {
+            "ass/xmlsecurity": "dev-master",
+            "besimple/soap-common": "dev-master",
+            "php": ">=5.3.0",
+            "symfony/http-foundation": ">=2.0,<2.3-dev",
+            "zendframework/zend-mail": "2.1.*",
+            "zendframework/zend-mime": "2.1.*",
+            "zendframework/zend-soap": "2.1.*"
+        },
+        "suggest": {
+            "besimple/soap-client": "dev-master",
+            "besimple/soap-server": "dev-master"
+        },
+        "time": "2013-02-27 16:08:32",
+        "type": "symfony-bundle",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "BeSimple\\SoapBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Francis Besset",
+                "email": "francis.besset@gmail.com",
+                "homepage": "http://www.apercite.fr"
+            },
+            {
+                "name": "Andreas Schamberger",
+                "email": "mail@andreass.net"
+            },
+            {
+                "name": "Christian Kerl",
+                "email": "christian-kerl@web.de"
+            }
+        ],
+        "description": "Build and consume SOAP and WSDL based web services with Symfony2",
+        "homepage": "https://github.com/BeSimple/BeSimpleSoapBundle",
+        "keywords": [
+            "soap",
+            "soap-bundle"
+        ]
+    },
+    {
+        "name": "besimple/soap-server",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "BeSimple/SoapServer",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/BeSimple/BeSimpleSoapServer.git",
+            "reference": "127d06fcb9b401593203ce9287da14a4986158f4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/BeSimple/BeSimpleSoapServer/zipball/127d06fcb9b401593203ce9287da14a4986158f4",
+            "reference": "127d06fcb9b401593203ce9287da14a4986158f4",
+            "shasum": ""
+        },
+        "require": {
+            "besimple/soap-common": "dev-master",
+            "php": ">=5.3.0"
+        },
+        "time": "2013-01-15 21:45:13",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "BeSimple\\SoapServer": "BeSimple/SoapServer/src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Francis Besset",
+                "email": "francis.besset@gmail.com",
+                "homepage": "http://www.apercite.fr"
+            },
+            {
+                "name": "Andreas Schamberger",
+                "email": "mail@andreass.net"
+            },
+            {
+                "name": "Christian Kerl",
+                "email": "christian-kerl@web.de"
+            }
+        ],
+        "description": "Build and consume SOAP Server based web services",
+        "homepage": "https://github.com/BeSimple/BeSimpleSoapServer",
+        "keywords": [
+            "soap",
+            "soap-server"
+        ]
     }
 ]

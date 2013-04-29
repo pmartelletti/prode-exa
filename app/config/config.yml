@@ -106,3 +106,11 @@ hip_mandrill:
     default:
         sender: equipo@prodeexa.com.ar
         sender_name: Equipo Prode Exa! Futbol
+        
+be_simple_soap:
+    services:
+        ImportarPartidos:
+            namespace:     http://prodeexa.com.ar/ws/ImportarPartidos/1.0/
+            binding:       rpc-literal
+            resource:      "@ExaProdeBundle/Controller/WebserviceController.php"
+            resource_type: annotation
