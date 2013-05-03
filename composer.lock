@@ -982,12 +982,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Hipaway-Travel/HipMandrillBundle.git",
-                "reference": "6c0e65a969f74dcf49c4cb52ed5531fd4497ff88"
+                "reference": "66c36d1b81b943c5d9de3e22bca6b47a821a498e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Hipaway-Travel/HipMandrillBundle/zipball/6c0e65a969f74dcf49c4cb52ed5531fd4497ff88",
-                "reference": "6c0e65a969f74dcf49c4cb52ed5531fd4497ff88",
+                "url": "https://api.github.com/repos/Hipaway-Travel/HipMandrillBundle/zipball/66c36d1b81b943c5d9de3e22bca6b47a821a498e",
+                "reference": "66c36d1b81b943c5d9de3e22bca6b47a821a498e",
                 "shasum": ""
             },
             "require": {
@@ -1025,7 +1025,7 @@
                 "transaction mail",
                 "transactional"
             ],
-            "time": "2013-03-28 10:04:47"
+            "time": "2013-05-02 07:37:31"
         },
         {
             "name": "jdorn/sql-formatter",

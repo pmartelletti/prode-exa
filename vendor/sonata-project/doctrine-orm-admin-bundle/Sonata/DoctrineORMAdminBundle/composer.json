@@ -1,0 +1,37 @@
+{
+    "name": "sonata-project/doctrine-orm-admin-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony Sonata / Integrate Doctrine ORM into the SonataAdminBundle",
+    "keywords": ["Admin Generator", "admin", "sonata", "bootstrap", "generator"],
+    "homepage": "http://sonata-project.org/bundles/admin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Rabaix",
+            "email": "thomas.rabaix@sonata-project.org",
+            "homepage": "http://sonata-project.org"
+        },
+        {
+            "name": "Sonata Community",
+            "homepage": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle/contributors"
+        }
+    ],
+    "require": {
+        "doctrine/orm": ">=2.3,<2.4",
+        "sonata-project/admin-bundle": "2.2.*@dev",
+        "sonata-project/block-bundle": "2.2.*@dev",
+        "symfony/symfony": ">=2.2,<2.3",
+        "knplabs/knp-menu-bundle": "1.1.x-dev"
+    },
+    "autoload": {
+        "psr-0": { "Sonata\\DoctrineORMAdminBundle": "" }
+    },
+    "target-dir": "Sonata/DoctrineORMAdminBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-2.0": "2.0.x-dev",
+            "dev-2.1": "2.1.x-dev",
+            "dev-master": "2.2.x-dev"
+        }
+    }
+}
